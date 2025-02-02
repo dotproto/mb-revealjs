@@ -1,0 +1,348 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>FSODEM 2025 - State of Firefox Add-ons</title>
+
+    <link rel="stylesheet" href="/reveal-5.1.0/dist/reset.css">
+    <link rel="stylesheet" href="/reveal-5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="/reveal-5.1.0/dist/theme/black.css">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="/reveal-5.1.0/plugin/highlight/monokai.css">
+    <style>
+      :root {
+        --r-heading1-size: 3em;
+        --r-heading2-size: 2.5em;
+      }
+      .reveal .slides {
+        text-align: left;
+      }
+      .reveal {
+        h1, h2, h3, h4, h5, h6 {
+          line-height: 120%;
+        }
+      }
+      .slides {
+        color: white;
+        /* outline: 1px solid red; */
+      }
+
+      .reveal .fragment.semi {
+        opacity: 0.5;
+      }
+      .reveal .fragment.semi.current-fragment {
+        opacity: 1;
+      }
+
+      #userscript-cursor {}
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <!-- <h1 style="margin: 5vmin 0 0 0; line-height: 70%; font-size: calc(10vh + 10vw);"><span style="font-size: .5em;">State of<br></span>Firefox<br>Add-ons</h1> -->
+          <h1 style="line-height: 120%;">
+            <div>State of</div>
+            <div class="r-fit-text">Firefox</div>
+            <div class="r-fit-text">Add-ons</div>
+          </h1>
+          <p style="margin-top: 0">Simeon Vincent<br><small>Developer Relations Engineer, Firefox Add-ons</small></p>
+          <aside class="notes">Oh hi!</aside>
+        </section>
+
+        <section class="module">
+          <div style="max-width: 50%;">
+            <h2 class="fragment r-fit-text">good</h2>
+          </div>
+          <h3 class="fragment" style="margin-top:-2%">and getting better</h3>
+        </section>
+
+        <!--
+        Baseline
+          - # of contributors
+          - # of published extensions on AMO
+          - % of FF users that have extensions installed
+          - Extension submission rate
+          - # of developer accounts
+        -->
+        <section>
+          <section>
+            <h2 class="r-fit-text">some stats</h2>
+          </section>
+
+          <section>
+            <p style="font-size:300px;">46,472</p>
+            <p style="position: relative; top: -40px">extensions on addons.mozilla.org</p>
+            <p style="font-size: 50%; opacity: .5;">https://addons.mozilla.org/en-US/firefox/search/?type=extension</p>
+          </section>
+
+          <section>
+            <p style="font-size:300px;">1,892</p>
+            <p style="position: relative; top: -40px">Android extensions on addons.mozilla.org</p>
+            <p style="font-size: 50%; opacity: .5;">https://addons.mozilla.org/en-US/android/search/?type=extension</p>
+
+            <aside class="notes">
+              <p>Generally available in Dec, 2023</p>
+              <p>Steady growth in the number of Android users using extensions</p>
+              <p>Same with # of addons being used</p>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Add-on usage</h2>
+            <img src="assets/addon-usage-2.png">
+            <p style="font-size: 50%; opacity: .5;">https://data.firefox.com/dashboard/usage-behavior</p>
+          </section>
+
+          <section>
+            <h2>User distribution</h2>
+            <img src="assets/user-dist.png">
+            <p style="font-size: 50%; opacity: .5;">https://firefox-stats.com/stats</p>
+          </section>
+        </section>
+
+        <section></section>
+
+        <section>
+          <!--
+            2 main things to call out
+            - Improved how Manifest V3 extensions work
+            - User scripts API
+          -->
+          <section>
+            <h2 class="r-fit-text">UX<br>improvements</h2>
+            <aside class="notes">Your favorite open source browser :)</aside>
+          </section>
+
+          <section>
+            <h2>User scripts</h2>
+            <div class="r-stack" style="margin-top: -65px;">
+              <svg viewBox="0 0 100 75" preserveAspectRatio="xMidYMid slice" role="img" class="fragment" data-fragment-index="1">
+                <image href="assets/userscripts-1.png" width="100" height="70"></image>
+              </svg>
+              <svg viewBox="0 0 100 75" preserveAspectRatio="xMidYMid slice" role="img" class="fragment fade-in" data-fragment-index="2">
+                <image href="assets/userscripts-2.png" width="100" height="70"></image>
+              </svg>
+              <svg viewBox="0 0 100 75" preserveAspectRatio="xMidYMid slice" role="img" class="fragment fade-right" data-fragment-index="2">
+                <image href="assets/default-pointer.svg" width="10" y="36" x="74"></image>
+              </svg>
+              <svg viewBox="0 0 100 75" preserveAspectRatio="xMidYMid slice" role="img" class="fragment fade-in" data-fragment-index="3">
+                <image href="assets/userscripts-3.png" width="100" height="70"></image>
+              </svg>
+              <svg viewBox="0 0 100 75" preserveAspectRatio="xMidYMid slice" role="img" class="fragment fade-right" data-fragment-index="3">
+                <image href="assets/default-pointer.svg" width="10" x="44.5" y="18.5"></image>
+              </svg>
+              <svg viewBox="0 0 100 75" preserveAspectRatio="xMidYMid slice" role="img" class="fragment" data-fragment-index="4">
+                <image href="assets/userscripts-4.png" width="100" height="70"></image>
+                <image href="assets/default-pointer.svg" width="10" x="44.5" y="18.5"></image>
+              </svg>
+              <svg viewBox="0 0 100 75" preserveAspectRatio="xMidYMid slice" role="img" class="fragment" data-fragment-index="5">
+                <image href="assets/userscripts-4.png" width="100" height="70"></image>
+              </svg>
+              <svg viewBox="0 0 100 75" preserveAspectRatio="xMidYMid slice" role="img" class="fragment fade-right" data-fragment-index="5">
+                <image href="assets/default-pointer.svg" width="10" x="77.5" y="30.5"></image>
+              </svg>
+              <svg viewBox="0 0 100 75" preserveAspectRatio="xMidYMid slice" role="img" class="fragment fade-in" data-fragment-index="6">
+                <rect width="100" height="75" y="3" fill="#191919"></rect>
+              </svg>
+              <svg viewBox="0 0 100 75" preserveAspectRatio="xMidYMid slice" role="img" class="fragment" data-fragment-index="7">
+                <image href="assets/userscripts-0.png" width="100" height="70"></image>
+              </svg>
+              <svg viewBox="0 0 100 75" preserveAspectRatio="xMidYMid slice" role="img" class="fragment fade-right" data-fragment-index="8">
+                <image href="assets/default-pointer.svg" width="10" x="23" y="39"></image>
+              </svg>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2 class="r-fit-text">Debugging<br>improvements</h2>
+          </section>
+
+          <section>
+            <h2 style="position: absolute; top: 0; left: 0; z-index: 0;">Bug fixes</h2>
+            <!-- TODO: We can improve this section by showing a web-ext workflow:
+              1. Developer starts a debugging session using web-ext CLI tool
+              2. Browser auto starts with the extension installed
+              3. As the developer updates files on disk, the browser auto-reloads the extension
+              4. Changes to source files are reflected in DevTools
+            -->
+            <div class="r-stack" style="margin-top: 65px;">
+              <img src="assets/devtools-bg-3.png" class="fragment">
+              <img src="assets/devtools-bg-4-2.png" class="fragment">
+              <img src="assets/devtools-bg-6.png" class="fragment">
+            </div>
+          </section>
+
+          <section data-auto-animate>
+            <h2>Content scripts</h2>
+            <div class="r-stack" style="margin-top: -65px;">
+              <svg viewBox="0 0 100 75" preserveAspectRatio="xMidYMid slice" role="img" class="fragment">
+                <image href="assets/devtools-cs-1.png" width="100" height="70"></image>
+              </svg>
+
+              <svg viewBox="0 0 100 75" preserveAspectRatio="xMidYMid slice" role="img" class="fragment">
+                <image href="assets/devtools-cs-2.png" width="100" height="70"></image>
+              </svg>
+
+              <svg viewBox="0 0 100 75" preserveAspectRatio="xMidYMid slice" role="img" class="fragment">
+                <image href="assets/devtools-cs-3-2.png" width="100" height="70"></image>
+              </svg>
+            </div>
+          </section>
+
+          <section data-auto-animate>
+            <h2>Console context</h2>
+            <div class="r-stack" style="margin-top: -65px;">
+              <svg viewBox="0 0 100 75" preserveAspectRatio="xMidYMid slice" role="img">
+                <image href="assets/devtools-cs-3-2.png" width="100" height="70"></image>
+              </svg>
+              <svg viewBox="0 0 100 75" preserveAspectRatio="xMidYMid slice" role="img" class="fragment">
+                <image href="assets/devtools-csc-1.png" width="100" height="70"></image>
+              </svg>
+              <svg viewBox="0 0 100 75" preserveAspectRatio="xMidYMid slice" role="img" class="fragment">
+                <image href="assets/devtools-csc-2.png" width="100" height="70"></image>
+              </svg>
+              <svg viewBox="0 0 100 75" preserveAspectRatio="xMidYMid slice" role="img" class="fragment">
+                <image href="assets/devtools-csc-3.png" width="100" height="70"></image>
+              </svg>
+              <svg viewBox="0 0 100 75" preserveAspectRatio="xMidYMid slice" role="img" class="fragment">
+                <image href="assets/devtools-csc-4.png" width="100" height="70"></image>
+              </svg>
+              <svg viewBox="0 0 100 75" preserveAspectRatio="xMidYMid slice" role="img" class="fragment">
+                <image href="assets/devtools-csc-5.png" width="100" height="70"></image>
+              </svg>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Cross-browser<br>collaboration</h2>
+            <aside class="notes">
+              <p>Two main areas of work;</p>
+              <ol>
+                <li>Reducing inconsistencies in existing APIs</li>
+                <li>Aligning on new API</li>
+              </ol>
+            </aside>
+          </section>
+
+          <section>
+            <h2>W3C</h2>
+            <p><u>W</u>orld <u>W</u>ide <u>W</u>eb <u>C</u>onsortium</p>
+          </section>
+
+          <section data-auto-animate>
+            <h2>WECG</h2>
+            <p><u>W</u>eb<u>E</u>xtensions <u>C</u>ommunity <u>G</u>roup</p>
+          </section>
+
+          <section data-auto-animate>
+            <h2>WECG</h2>
+            <ul>
+              <li>Reducing inconsistencies</li>
+              <li>Evolve browser extensions</li>
+            </ul>
+            <p><a href="https://github.com/w3c/webextensions">github.com/w3c/webextensions</a></p>
+
+            <aside class="notes">
+              <p><strong>Reduce inconsistencies</strong> across implementations</p>
+              <p>Implemented by all major browser engines. </p>
+              <p><strong>Work</strong></p>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Meetings!</h2>
+            <ul>
+              <li>Every other Thursday at 8 AM Pacific</li>
+              <li>W3C's annual conference (TPAC)</li>
+              <li>Face to face</li>
+            </ul>
+
+            <aside class="notes">
+              <p></p>
+            </aside>
+
+            <!--
+            We're working on getting extensions added to Web Platform Test,
+            the main test suite used to validate interoperability of web platform APIs.
+
+            This also has a direct benefit to extension developers, as the improvements
+            we make to these tools will also help developers create more robust
+            automated test suites
+            -->
+          </section>
+
+        </section>
+
+        <!-- END -->
+        <section>
+          <div>
+            <h2>Resources</h2>
+            <p><a href="https://discourse.mozilla.org/c/add-ons">discourse.mozilla.org/c/add-ons</a></p>
+            <p><a href="https://extensionworkshop.com">extensionworkshop.com</a></p>
+            <p><a href="https://github.com/mdn/webextensions-examples/">github.com/mdn/webextensions-examples</a></p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h2>Contact</h2>
+            <p><img src="assets/bluesky.svg" style="vertical-align:middle; height: 50px; width: 50px; margin: 0;"> <a href="https://bsky.app/profile/dotproto.com">@dotproto.com</a></p>
+            <p><img src="assets/mastodon.png" style="vertical-align:middle; height: 50px; width: 50px; margin: 0;"> <a href="https://toot.cafe/@dotproto/">@dotproto@toot.cafe</a></p>
+            <p><a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3yNnoZNBdJCTiJjqziXs9GoCYpfW9XZFkB0QWKNy9dfoqqPlCw7UsYh48Ff0i3lZcA5YzygwrU">Firefox Add-ons Office hours</a><br><small>extensionworkshop.com/contact</small></p>
+          </div>
+
+          <aside class="notes"></aside>
+        </section>
+
+        <section>
+          <h2></h2>
+        </section>
+
+        <!--
+        <section data-visibility="hidden">
+          <h2 class="r-fit-text">State of</h2>
+          <h2 class="r-fit-text">Firefox Add-ons</h2>
+        </section>
+
+        <section data-visibility="hidden">
+          <h2>Code</h2>
+          <pre><code data-trim data-noescape data-line-numbers="1|2,4|5">
+            (def lazy-fib
+              (concat
+               [0 1]
+               ((fn rfib [a b]
+                    (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
+              </code></pre>
+        </section>
+         -->
+      </div>
+      <p style="position: fixed; margin: 0; bottom: .3em; right: 5em; color: #999; font-size: 30px; z-index:1">dotproto.com/talks/fosdem2025</p>
+    </div>
+
+    <script src="/reveal-5.1.0/dist/reveal.js"></script>
+    <script src="/reveal-5.1.0/plugin/notes/notes.js"></script>
+    <script src="/reveal-5.1.0/plugin/markdown/markdown.js"></script>
+    <script src="/reveal-5.1.0/plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
